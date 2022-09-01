@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainTabbarController: UITabBarController {
+final class MainTabbarController: UITabBarController {
 
-    // Tabbar Items
+    // MARK: Tabbar Items
 
     private let rocketsViewController = UINavigationController(rootViewController:
                                                                 RocketsViewController())
