@@ -87,6 +87,11 @@ final class UpComingViewController: UIViewController {
 
 extension UpComingViewController: UITableViewDataSource, UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedLaunch = viewModel.upcomingList[indexPath.row]
+        self.navigationController?.pushViewController(UpcomingDetailViewController(upComingList: selectedLaunch), animated: true)
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.upcomingList.count
     }

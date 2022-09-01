@@ -96,7 +96,6 @@ extension RocketsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRocket = viewModel.rockets[indexPath.row]
         self.navigationController?.pushViewController(RocketDetailViewController(rocket: selectedRocket), animated: true)
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
