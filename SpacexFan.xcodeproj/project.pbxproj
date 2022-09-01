@@ -23,6 +23,9 @@
 		0C2079AD28C13B25002C05D5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0C2079AC28C13B25002C05D5 /* Kingfisher */; };
 		0C2079B228C13BE3002C05D5 /* RoketsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B128C13BE3002C05D5 /* RoketsCell.swift */; };
 		0C2079B428C13CF1002C05D5 /* UIViewContoller+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B328C13CF1002C05D5 /* UIViewContoller+.swift */; };
+		0C2079B728C13F7C002C05D5 /* CoreDataFavoriteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B628C13F7C002C05D5 /* CoreDataFavoriteHelper.swift */; };
+		0C2079BA28C14061002C05D5 /* Favorites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B828C14061002C05D5 /* Favorites+CoreDataClass.swift */; };
+		0C2079BB28C14061002C05D5 /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B928C14061002C05D5 /* Favorites+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		0C2079A628C13A53002C05D5 /* RocketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewModel.swift; sourceTree = "<group>"; };
 		0C2079B128C13BE3002C05D5 /* RoketsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoketsCell.swift; sourceTree = "<group>"; };
 		0C2079B328C13CF1002C05D5 /* UIViewContoller+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContoller+.swift"; sourceTree = "<group>"; };
+		0C2079B628C13F7C002C05D5 /* CoreDataFavoriteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFavoriteHelper.swift; sourceTree = "<group>"; };
+		0C2079B828C14061002C05D5 /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0C2079B928C14061002C05D5 /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +99,6 @@
 				0C20798328C12CD2002C05D5 /* Assets.xcassets */,
 				0C20798528C12CD2002C05D5 /* LaunchScreen.storyboard */,
 				0C20798828C12CD2002C05D5 /* Info.plist */,
-				0C20798028C12CD1002C05D5 /* SpacexFan.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		0C20799028C131A6002C05D5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0C2079B528C13F59002C05D5 /* CoreData */,
 				0C20799128C131B5002C05D5 /* Network */,
 			);
 			path = Service;
@@ -197,6 +203,17 @@
 				0C2079B128C13BE3002C05D5 /* RoketsCell.swift */,
 			);
 			name = TableCell;
+			sourceTree = "<group>";
+		};
+		0C2079B528C13F59002C05D5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0C2079B828C14061002C05D5 /* Favorites+CoreDataClass.swift */,
+				0C2079B928C14061002C05D5 /* Favorites+CoreDataProperties.swift */,
+				0C20798028C12CD1002C05D5 /* SpacexFan.xcdatamodeld */,
+				0C2079B628C13F7C002C05D5 /* CoreDataFavoriteHelper.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,10 +317,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C2079B228C13BE3002C05D5 /* RoketsCell.swift in Sources */,
+				0C2079BB28C14061002C05D5 /* Favorites+CoreDataProperties.swift in Sources */,
 				0C2079A428C136FF002C05D5 /* Date+.swift in Sources */,
 				0C20797828C12CD1002C05D5 /* AppDelegate.swift in Sources */,
+				0C2079BA28C14061002C05D5 /* Favorites+CoreDataClass.swift in Sources */,
 				0C20799A28C1332B002C05D5 /* RocketsViewController.swift in Sources */,
 				0C2079A128C13695002C05D5 /* NetworkService.swift in Sources */,
+				0C2079B728C13F7C002C05D5 /* CoreDataFavoriteHelper.swift in Sources */,
 				0C20797A28C12CD1002C05D5 /* SceneDelegate.swift in Sources */,
 				0C20799F28C135F7002C05D5 /* NetworkManager.swift in Sources */,
 				0C20799D28C13506002C05D5 /* Rockets.swift in Sources */,
