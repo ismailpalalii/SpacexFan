@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C20797828C12CD1002C05D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20797728C12CD1002C05D5 /* AppDelegate.swift */; };
 		0C20797A28C12CD1002C05D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20797928C12CD1002C05D5 /* SceneDelegate.swift */; };
-		0C20797C28C12CD1002C05D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20797B28C12CD1002C05D5 /* ViewController.swift */; };
-		0C20797F28C12CD1002C05D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C20797D28C12CD1002C05D5 /* Main.storyboard */; };
 		0C20798228C12CD1002C05D5 /* SpacexFan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C20798028C12CD1002C05D5 /* SpacexFan.xcdatamodeld */; };
 		0C20798428C12CD2002C05D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C20798328C12CD2002C05D5 /* Assets.xcassets */; };
 		0C20798728C12CD2002C05D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C20798528C12CD2002C05D5 /* LaunchScreen.storyboard */; };
@@ -20,8 +18,6 @@
 		0C20797428C12CD1002C05D5 /* SpacexFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpacexFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C20797728C12CD1002C05D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C20797928C12CD1002C05D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C20797B28C12CD1002C05D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0C20797E28C12CD1002C05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C20798128C12CD1002C05D5 /* SpacexFan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpacexFan.xcdatamodel; sourceTree = "<group>"; };
 		0C20798328C12CD2002C05D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C20798628C12CD2002C05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,8 +56,6 @@
 			children = (
 				0C20797728C12CD1002C05D5 /* AppDelegate.swift */,
 				0C20797928C12CD1002C05D5 /* SceneDelegate.swift */,
-				0C20797B28C12CD1002C05D5 /* ViewController.swift */,
-				0C20797D28C12CD1002C05D5 /* Main.storyboard */,
 				0C20798328C12CD2002C05D5 /* Assets.xcassets */,
 				0C20798528C12CD2002C05D5 /* LaunchScreen.storyboard */,
 				0C20798828C12CD2002C05D5 /* Info.plist */,
@@ -77,6 +71,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C20798B28C12CD2002C05D5 /* Build configuration list for PBXNativeTarget "SpacexFan" */;
 			buildPhases = (
+				0C20798E28C12D73002C05D5 /* Run Swift */,
 				0C20797028C12CD1002C05D5 /* Sources */,
 				0C20797128C12CD1002C05D5 /* Frameworks */,
 				0C20797228C12CD1002C05D5 /* Resources */,
@@ -130,18 +125,37 @@
 			files = (
 				0C20798728C12CD2002C05D5 /* LaunchScreen.storyboard in Resources */,
 				0C20798428C12CD2002C05D5 /* Assets.xcassets in Resources */,
-				0C20797F28C12CD1002C05D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C20798E28C12D73002C05D5 /* Run Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C20797028C12CD1002C05D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C20797C28C12CD1002C05D5 /* ViewController.swift in Sources */,
 				0C20797828C12CD1002C05D5 /* AppDelegate.swift in Sources */,
 				0C20797A28C12CD1002C05D5 /* SceneDelegate.swift in Sources */,
 				0C20798228C12CD1002C05D5 /* SpacexFan.xcdatamodeld in Sources */,
@@ -151,14 +165,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0C20797D28C12CD1002C05D5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C20797E28C12CD1002C05D5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0C20798528C12CD2002C05D5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
