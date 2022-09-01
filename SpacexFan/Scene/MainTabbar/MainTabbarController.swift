@@ -14,6 +14,9 @@ final class MainTabbarController: UITabBarController {
     private let rocketsViewController = UINavigationController(rootViewController:
                                                                 RocketsViewController(RocketsViewModel(NetworkService())))
 
+    private let upComingViewController = UINavigationController(rootViewController:
+                                                                    UpComingViewController(UpComingViewModel(NetworkService())))
+
     override func viewDidLoad() {
         super.viewDidLoad()
        configure()
@@ -23,8 +26,11 @@ final class MainTabbarController: UITabBarController {
             rocketsViewController.tabBarItem.image = UIImage(named: "rocketIcon")
             rocketsViewController.title = "Rockets"
 
+            upComingViewController.tabBarItem.image = UIImage(systemName: "arrow.forward.square")
+            upComingViewController.title = "Upcoming Launches"
+
             tabBar.tintColor = .systemIndigo
             tabBar.backgroundColor = .systemBackground
-            setViewControllers([rocketsViewController], animated: true)
+            setViewControllers([rocketsViewController, upComingViewController], animated: true)
         }
 }

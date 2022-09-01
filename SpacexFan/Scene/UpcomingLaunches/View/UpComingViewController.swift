@@ -1,20 +1,20 @@
 //
-//  RocketsViewController.swift
+//  UpComingViewController.swift
 //  SpacexFan
 //
-//  Created by İsmail Palalı on 1.09.2022.
+//  Created by İsmail Palalı on 2.09.2022.
 //
 
 import UIKit
 import SnapKit
 
-final class RocketsViewController: UIViewController {
+final class UpComingViewController: UIViewController {
 
     // MARK: - UI Elements
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = 160
-        tableView.register(RocketsCell.self, forCellReuseIdentifier: RocketsCell.identifier)
+        tableView.rowHeight = 120
+        tableView.register(UpcomingCell.self, forCellReuseIdentifier: UpcomingCell.identifier)
         return tableView
     }()
 
@@ -22,10 +22,10 @@ final class RocketsViewController: UIViewController {
     private let activityIndicator = UIActivityIndicatorView()
 
     // MARK: - Properties
-    private let viewModel: RocketsViewModel
+    private let viewModel: UpComingViewModel
 
 // MARK: - Init
-    init(_ viewModel: RocketsViewModel = RocketsViewModel()) {
+    init(_ viewModel: UpComingViewModel = UpComingViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,7 +37,7 @@ final class RocketsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        viewModel.fetchRockets()
+        viewModel.fetchUpcomingList()
         viewModel.viewDelegate = self
 
     }
@@ -50,7 +50,7 @@ final class RocketsViewController: UIViewController {
 
     // MARK: - UI Configure
         private func configure() {
-            title = "Rocket List"
+            title = "Upcoming Launches"
             view.backgroundColor = .systemBackground
             view.addSubview(tableView)
             view.addSubview(activityIndicator)
@@ -77,47 +77,28 @@ final class RocketsViewController: UIViewController {
         @objc private func refresTableView() {
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.viewModel.fetchRockets()
+                self.viewModel.fetchUpcomingList()
                 self.tableView.refreshControl?.endRefreshing()
             }
         }
-    // MARK: - Favorite Button Actions
-
-        @objc private func favButttonTapped(_ sender: UIButton) {
-            sender.isSelected.toggle()
-            viewModel.favoriButtonTapped(sender)
-    }
 }
 
 // MARK: Tableview delegate - data source
 
-extension RocketsViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedRocket = viewModel.rockets[indexPath.row]
-        self.navigationController?.pushViewController(RocketDetailViewController(rocket: selectedRocket), animated: true)
-
-    }
+extension UpComingViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.rockets.count
+        return viewModel.upcomingList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: RocketsCell.identifier,
-            for: indexPath) as? RocketsCell else { return UITableViewCell() }
-        cell.rocketFavButton.addTarget(self, action: #selector(favButttonTapped(_:)), for: UIControl.Event.touchUpInside)
-        cell.rocketFavButton.tag = indexPath.row
-        print(cell.rocketFavButton.tag)
-        cell.design(rockets: viewModel.rockets[indexPath.row])
-
-        if let data = CoreDataFavoriteHelper
-            .shared
-            .fetchData()?
-            .filter({ $0.name == viewModel.rockets[indexPath.row].name }) {
-            cell.rocketFavButton.isSelected = !data.isEmpty
+            withIdentifier: UpcomingCell.identifier,
+            for: indexPath) as? UpcomingCell else { return UITableViewCell() }
+        cell.design(launch: viewModel.upcomingList[indexPath.row])
+        if viewModel.upcomingList[indexPath.row].smallPatchURL == nil {
+            cell.launchImageView.image = UIImage(named: "patch-placeholder")
         }
         return cell
     }
@@ -125,15 +106,15 @@ extension RocketsViewController: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: Rockets Handle Delegate
 
-extension RocketsViewController : RocketsViewDelegate {
-    func didFetchRocketsWithSuccess() {
+extension UpComingViewController : UpcomingViewDelegate {
+    func didFetchUpcomingWithSuccess() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
         }
     }
 
-    func didFetchRocketsWithError(message: String) {
+    func didFetchUpcomingWithError(message: String) {
         self.errorMessage(title: "ERROR", message: "Rockets could not loaded! Please pull to refresh.")
     }
 }

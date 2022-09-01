@@ -25,8 +25,9 @@ class RocketsCell: UITableViewCell {
 
     private let rocketNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
-        label.textColor = .white
+        label.numberOfLines = 0
+        label.textAlignment = .justified
+        label.textColor = .label
         return label
     }()
 
@@ -80,8 +81,8 @@ class RocketsCell: UITableViewCell {
 
     }
  // MARK: - Design
-    func design(rocketImageURL: URL, rocketName: String) {
-        rocketImageView.kf.setImage(with: rocketImageURL)
-        rocketNameLabel.text = rocketName
+    func design(rockets: Rockets) {
+        rocketImageView.kf.setImage(with: rockets.images[0])
+        rocketNameLabel.text = rockets.name
     }
 }
