@@ -26,6 +26,9 @@
 		0C2079B728C13F7C002C05D5 /* CoreDataFavoriteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B628C13F7C002C05D5 /* CoreDataFavoriteHelper.swift */; };
 		0C2079BA28C14061002C05D5 /* Favorites+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B828C14061002C05D5 /* Favorites+CoreDataClass.swift */; };
 		0C2079BB28C14061002C05D5 /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079B928C14061002C05D5 /* Favorites+CoreDataProperties.swift */; };
+		0C2079C028C1436F002C05D5 /* RocketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079BF28C1436F002C05D5 /* RocketDetailViewController.swift */; };
+		0C2079C328C14483002C05D5 /* RocketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079C228C14483002C05D5 /* RocketDetailViewModel.swift */; };
+		0C2079C628C1462E002C05D5 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2079C528C1462E002C05D5 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		0C2079B628C13F7C002C05D5 /* CoreDataFavoriteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFavoriteHelper.swift; sourceTree = "<group>"; };
 		0C2079B828C14061002C05D5 /* Favorites+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0C2079B928C14061002C05D5 /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0C2079BF28C1436F002C05D5 /* RocketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailViewController.swift; sourceTree = "<group>"; };
+		0C2079C228C14483002C05D5 /* RocketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailViewModel.swift; sourceTree = "<group>"; };
+		0C2079C528C1462E002C05D5 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 		0C20799428C13227002C05D5 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				0C2079BD28C142ED002C05D5 /* RocketDetail */,
 				0C20799828C132F2002C05D5 /* Rockets */,
 				0C20799528C13232002C05D5 /* MainTabbar */,
 			);
@@ -214,6 +221,40 @@
 				0C2079B628C13F7C002C05D5 /* CoreDataFavoriteHelper.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0C2079BD28C142ED002C05D5 /* RocketDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0C2079C428C14612002C05D5 /* CollectionCell */,
+				0C2079C128C14467002C05D5 /* ViewModel */,
+				0C2079BE28C1434B002C05D5 /* View */,
+			);
+			path = RocketDetail;
+			sourceTree = "<group>";
+		};
+		0C2079BE28C1434B002C05D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C2079BF28C1436F002C05D5 /* RocketDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C2079C128C14467002C05D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C2079C228C14483002C05D5 /* RocketDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0C2079C428C14612002C05D5 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0C2079C528C1462E002C05D5 /* ImageCollectionViewCell.swift */,
+			);
+			path = CollectionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,14 +359,17 @@
 			files = (
 				0C2079B228C13BE3002C05D5 /* RoketsCell.swift in Sources */,
 				0C2079BB28C14061002C05D5 /* Favorites+CoreDataProperties.swift in Sources */,
+				0C2079C328C14483002C05D5 /* RocketDetailViewModel.swift in Sources */,
 				0C2079A428C136FF002C05D5 /* Date+.swift in Sources */,
 				0C20797828C12CD1002C05D5 /* AppDelegate.swift in Sources */,
 				0C2079BA28C14061002C05D5 /* Favorites+CoreDataClass.swift in Sources */,
+				0C2079C628C1462E002C05D5 /* ImageCollectionViewCell.swift in Sources */,
 				0C20799A28C1332B002C05D5 /* RocketsViewController.swift in Sources */,
 				0C2079A128C13695002C05D5 /* NetworkService.swift in Sources */,
 				0C2079B728C13F7C002C05D5 /* CoreDataFavoriteHelper.swift in Sources */,
 				0C20797A28C12CD1002C05D5 /* SceneDelegate.swift in Sources */,
 				0C20799F28C135F7002C05D5 /* NetworkManager.swift in Sources */,
+				0C2079C028C1436F002C05D5 /* RocketDetailViewController.swift in Sources */,
 				0C20799D28C13506002C05D5 /* Rockets.swift in Sources */,
 				0C20799728C1329B002C05D5 /* MainTabbarController.swift in Sources */,
 				0C2079A728C13A53002C05D5 /* RocketsViewModel.swift in Sources */,
