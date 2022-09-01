@@ -42,7 +42,27 @@ final class RocketsViewModel {
         }
     }
 
+
+    // MARK: Core data add - deleted actions
+    
     func favoriButtonTapped(_ sender: UIButton) {
-        // TODO İMPLEMENT
+         if let data = CoreDataFavoriteHelper.shared
+             .fetchData()?
+             .filter({ $0.name == rockets[sender.tag].name }) {
+
+             if data.isEmpty {
+                 CoreDataFavoriteHelper.shared.saveData(name: rockets[sender.tag].name ,
+                                                        id: rockets[sender.tag].id )
+                 print("data kaydedildi \(rockets[sender.tag].name)")
+             } else {
+
+                 if let index = CoreDataFavoriteHelper.shared
+                     .fetchData()?
+                     .firstIndex(where: { $0.name == rockets[sender.tag].name }) {
+                     CoreDataFavoriteHelper.shared.deleteData(index: index)
+                     print("data silindi \(rockets[sender.tag].name)")
+                 }
+             }
+         }
      }
 }

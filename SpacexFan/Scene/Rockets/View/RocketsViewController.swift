@@ -84,8 +84,8 @@ final class RocketsViewController: UIViewController {
     // MARK: - Favorite Button Actions
 
         @objc private func favButttonTapped(_ sender: UIButton) {
-
-            //TODO IMPLEMENT
+            sender.isSelected.toggle()
+            viewModel.favoriButtonTapped(sender)
     }
 }
 
@@ -103,11 +103,18 @@ extension RocketsViewController: UITableViewDataSource, UITableViewDelegate {
             withIdentifier: RocketsCell.identifier,
             for: indexPath) as? RocketsCell else { return UITableViewCell() }
         cell.rocketFavButton.addTarget(self, action: #selector(favButttonTapped(_:)), for: UIControl.Event.touchUpInside)
+        cell.rocketFavButton.tag = indexPath.row
+        print(cell.rocketFavButton.tag)
         cell.design(rocketImageURL: viewModel.rockets[indexPath.row].images[0],
                     rocketName: viewModel.rockets[indexPath.row].name)
 
+        if let data = CoreDataFavoriteHelper
+            .shared
+            .fetchData()?
+            .filter({ $0.name == viewModel.rockets[indexPath.row].name }) {
+            cell.rocketFavButton.isSelected = !data.isEmpty
+        }
         return cell
-
     }
 }
 
@@ -125,7 +132,3 @@ extension RocketsViewController : RocketsViewDelegate {
         self.errorMessage(title: "ERROR", message: "Rockets could not loaded! Please pull to refresh.")
     }
 }
-
-
-
-
