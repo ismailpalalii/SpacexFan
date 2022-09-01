@@ -12,6 +12,8 @@
 		0C20798228C12CD1002C05D5 /* SpacexFan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C20798028C12CD1002C05D5 /* SpacexFan.xcdatamodeld */; };
 		0C20798428C12CD2002C05D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C20798328C12CD2002C05D5 /* Assets.xcassets */; };
 		0C20798728C12CD2002C05D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C20798528C12CD2002C05D5 /* LaunchScreen.storyboard */; };
+		0C20799728C1329B002C05D5 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20799628C1329B002C05D5 /* MainTabbarController.swift */; };
+		0C20799A28C1332B002C05D5 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20799928C1332B002C05D5 /* RocketsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		0C20798328C12CD2002C05D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C20798628C12CD2002C05D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C20798828C12CD2002C05D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C20799628C1329B002C05D5 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
+		0C20799928C1332B002C05D5 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,16 @@
 		0C20797628C12CD1002C05D5 /* SpacexFan */ = {
 			isa = PBXGroup;
 			children = (
+				0C20799428C13227002C05D5 /* Scene */,
+				0C20799028C131A6002C05D5 /* Service */,
+				0C20798F28C12E0B002C05D5 /* Resources */,
+			);
+			path = SpacexFan;
+			sourceTree = "<group>";
+		};
+		0C20798F28C12E0B002C05D5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				0C20797728C12CD1002C05D5 /* AppDelegate.swift */,
 				0C20797928C12CD1002C05D5 /* SceneDelegate.swift */,
 				0C20798328C12CD2002C05D5 /* Assets.xcassets */,
@@ -61,7 +75,63 @@
 				0C20798828C12CD2002C05D5 /* Info.plist */,
 				0C20798028C12CD1002C05D5 /* SpacexFan.xcdatamodeld */,
 			);
-			path = SpacexFan;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C20799028C131A6002C05D5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0C20799128C131B5002C05D5 /* Network */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0C20799128C131B5002C05D5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0C20799328C131CD002C05D5 /* Service */,
+				0C20799228C131C7002C05D5 /* Manager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0C20799228C131C7002C05D5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0C20799328C131CD002C05D5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0C20799428C13227002C05D5 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				0C20799828C132F2002C05D5 /* Rockets */,
+				0C20799528C13232002C05D5 /* MainTabbar */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		0C20799528C13232002C05D5 /* MainTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				0C20799628C1329B002C05D5 /* MainTabbarController.swift */,
+			);
+			path = MainTabbar;
+			sourceTree = "<group>";
+		};
+		0C20799828C132F2002C05D5 /* Rockets */ = {
+			isa = PBXGroup;
+			children = (
+				0C20799928C1332B002C05D5 /* RocketsViewController.swift */,
+			);
+			path = Rockets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C20797828C12CD1002C05D5 /* AppDelegate.swift in Sources */,
+				0C20799A28C1332B002C05D5 /* RocketsViewController.swift in Sources */,
 				0C20797A28C12CD1002C05D5 /* SceneDelegate.swift in Sources */,
+				0C20799728C1329B002C05D5 /* MainTabbarController.swift in Sources */,
 				0C20798228C12CD1002C05D5 /* SpacexFan.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,10 +373,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 78N4XSKUGS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpacexFan/Info.plist;
+				INFOPLIST_FILE = SpacexFan/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,10 +400,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 78N4XSKUGS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpacexFan/Info.plist;
+				INFOPLIST_FILE = SpacexFan/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
