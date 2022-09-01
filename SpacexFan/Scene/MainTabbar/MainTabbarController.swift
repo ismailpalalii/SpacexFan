@@ -12,7 +12,7 @@ final class MainTabbarController: UITabBarController {
     // MARK: Tabbar Items
 
     private let rocketsViewController = UINavigationController(rootViewController:
-                                                                RocketsViewController())
+                                                                RocketsViewController(RocketsViewModel(NetworkService())))
 
     override func viewDidLoad() {
         super.viewDidLoad()
