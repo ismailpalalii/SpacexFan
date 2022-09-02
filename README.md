@@ -1,8 +1,8 @@
-# SpacexFan
+
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://user-images.githubusercontent.com/72145206/188059603-f4f2148f-a431-4d81-b582-82b20c51a9c4.png">
-    <img src="images/logo.png" alt="Logo" width="200" height="200">
+  <img src="https://user-images.githubusercontent.com/72145206/188066149-da4573bc-7843-4438-9ced-1f88eeb8af65.gif" align="center" width="250" height="250">
+
   </a>
 
   <h3 align="center"> SpaceX Fan App</h3>
