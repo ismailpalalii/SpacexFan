@@ -74,7 +74,7 @@ extension FavoriteRocketViewController: UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return viewModel.favRockets.count
     }
 
