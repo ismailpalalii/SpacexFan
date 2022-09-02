@@ -46,14 +46,21 @@ final class RocketsViewModel {
     // MARK: Core data add - deleted actions
     
     func favoriButtonTapped(_ sender: UIButton) {
+        
          if let data = CoreDataFavoriteHelper.shared
              .fetchData()?
              .filter({ $0.name == rockets[sender.tag].name }) {
-
              if data.isEmpty {
-                 CoreDataFavoriteHelper.shared.saveData(name: rockets[sender.tag].name ,
-                                                        id: rockets[sender.tag].id )
+                 CoreDataFavoriteHelper.shared
+                    .saveData(
+                    name: rockets[sender.tag].name
+                    ,id: rockets[sender.tag].id
+
+                    ,desc: rockets[sender.tag].description
+                    ,country: rockets[sender.tag].country
+                    ,company: rockets[sender.tag].company)
                  print("data kaydedildi \(rockets[sender.tag].name)")
+
              } else {
 
                  if let index = CoreDataFavoriteHelper.shared

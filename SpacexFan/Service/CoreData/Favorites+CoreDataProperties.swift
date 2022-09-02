@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Favorites {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Favorites> {
@@ -18,7 +17,9 @@ extension Favorites {
 
     @NSManaged public var id: String?
     @NSManaged public var name: String?
-
+    @NSManaged public var desc: String?
+    @NSManaged public var country: String?
+    @NSManaged public var company: String?
 }
 
 extension Favorites : Identifiable {

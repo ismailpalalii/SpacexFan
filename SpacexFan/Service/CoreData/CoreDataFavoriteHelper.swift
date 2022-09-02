@@ -28,11 +28,15 @@ final class CoreDataFavoriteHelper {
         return nil
     }
 // MARK: - SaveData
-    func saveData(name: String, id: String) {
+    func saveData(name: String, id: String, desc: String, country: String, company: String) {
 
         let favorite = Favorites(context: context)
         favorite.name = name
         favorite.id = id
+        favorite.desc = desc
+        favorite.country = country
+        favorite.company = company
+
         do {
             try self.context.save()
         } catch {

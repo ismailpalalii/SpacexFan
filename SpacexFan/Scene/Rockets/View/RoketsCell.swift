@@ -55,7 +55,7 @@ class RocketsCell: UITableViewCell {
         contentView.addSubview(rocketNameLabel)
         contentView.addSubview(rocketFavButton)
 
-        rocketNameLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.bold)
+        rocketNameLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
         rocketNameLabel.textColor = .black
         rocketFavButton.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
         rocketFavButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.selected)
@@ -69,14 +69,13 @@ class RocketsCell: UITableViewCell {
         }
 
         rocketNameLabel.snp.makeConstraints { make in
-            make.left.equalTo(rocketImageView.snp.left).offset(128)
+            make.left.equalTo(rocketImageView.snp.left).offset(148)
             make.centerY.equalToSuperview()
         }
 
         rocketFavButton.snp.makeConstraints { make in
-            make.left.equalTo(rocketNameLabel.snp.left).offset(96)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(60)
+            make.centerY.equalTo(rocketNameLabel)
+            make.right.equalToSuperview().offset(-32)
         }
 
     }

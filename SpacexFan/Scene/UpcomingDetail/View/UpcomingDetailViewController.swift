@@ -17,7 +17,7 @@ import SnapKit
 import Kingfisher
 import SafariServices
 
-class UpcomingDetailViewController: UIViewController {
+final class UpcomingDetailViewController: UIViewController {
 
     // MARK: Property
 
