@@ -42,8 +42,6 @@ This project was built using spaceX Api. Can see rockets and upcoming events. Yo
 The project used Snapkit for the programmatic UI, KingFisher to retrieve images,
 URLSession to request API and Core Data to save information. The MVVM model was applied.
 
-The favorite button status on the detail page and the slider image on the favorite rocket page, 
-which are among the project requirements, could not be completed.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
